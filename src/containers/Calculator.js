@@ -74,14 +74,20 @@ function App() {
 
   const subtract = (number) => {
     setRunningTotal(parseFloat(previousTotal) - parseFloat(number));
-  }
+  };
 
   const multiply = (number) => {
     setRunningTotal(parseFloat(previousTotal) * parseFloat(number));
   }
 
   const divide = (number) => {
-    setRunningTotal(parseFloat(previousTotal) / parseFloat(number));
+    let newTotal = parseFloat(previousTotal) / parseFloat(number);
+    if (newTotal === Infinity) {
+      setRunningTotal("ERROR");
+    } else {
+      setRunningTotal(newTotal);
+    };
+    
   }
 
 
