@@ -19,7 +19,12 @@ describe('Calculator', () => {
   });
 
   it("Should be able to add numbers", () => {
-    container.find
-  })
-})
+    container.find("#number1").simulate("click");
+    container.find("#operator-add").simulate("click");
+    container.find("#number4").simulate("click");
+    container.find("#operator-equals").simulate("click");
+    const total = container.find("#running-total");
+    expect(total.text()).toEqual("5");
+  });
+});
 
