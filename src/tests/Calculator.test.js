@@ -35,6 +35,25 @@ describe('Calculator', () => {
     const total = container.find("#running-total");
     expect(total.text()).toEqual("3");
   });
+  
+  it("Should be able to multiply numbers", () => {
+    container.find("#number3").simulate("click");
+    container.find("#operator-multiply").simulate("click");
+    container.find("#number5").simulate("click");
+    container.find("#operator-equals").simulate("click");
+    const total = container.find("#running-total");
+    expect(total.text()).toEqual("15");
+  });
+  
+  it("Should be able to divide numbers", () => {
+    container.find("#number2").simulate("click");
+    container.find("#number1").simulate("click");
+    container.find("#operator-divide").simulate("click");
+    container.find("#number7").simulate("click");
+    container.find("#operator-equals").simulate("click");
+    const total = container.find("#running-total");
+    expect(total.text()).toEqual("3");
+  });
 
 
 
