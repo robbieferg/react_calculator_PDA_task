@@ -26,5 +26,17 @@ describe('Calculator', () => {
     const total = container.find("#running-total");
     expect(total.text()).toEqual("5");
   });
+  
+  it("Should be able to subtract numbers", () => {
+    container.find("#number7").simulate("click");
+    container.find("#operator-subtract").simulate("click");
+    container.find("#number4").simulate("click");
+    container.find("#operator-equals").simulate("click");
+    const total = container.find("#running-total");
+    expect(total.text()).toEqual("3");
+  });
+
+
+
 });
 
